@@ -5,7 +5,7 @@ pipeline {
     }
         stages {
           
-            stage('build') {
+            stage('build mvn') {
 
 
                    steps {
