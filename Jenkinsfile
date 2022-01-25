@@ -14,7 +14,7 @@ pipeline {
                        
               }
         
-         stage("build & SonarQube analysis") {
+         stage("build and SonarQube analysis") {
 
             steps {
               withSonarQubeEnv('sonarqube') {
