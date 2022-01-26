@@ -18,6 +18,11 @@ pipeline {
 			sh 'docker ps'
 			}
 		}
+		stage('test install tomcat'){
+		steps{
+			sh 'docker run -it --rm -p 8888:8080 tomcat:9.0'
+			}	
+		}
        
 /*         stage("build and SonarQube analysis") {
             steps {
