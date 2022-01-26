@@ -21,7 +21,7 @@ pipeline {
 		stage('test install tomcat'){
 		steps{
 			//sh 'docker run --rm -p 8888:8080 tomcat:9.0-slim'
-			sh 'docker build -t petclinic_img'
+			sh 'docker build -t petclinic_img .'
 			}	
 		}
 
