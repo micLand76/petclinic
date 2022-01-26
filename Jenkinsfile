@@ -20,14 +20,10 @@ pipeline {
 		}
 		stage('test install tomcat'){
 		steps{
-			sh 'docker run --rm -p 8888:8080 tomcat:9.0-slim'
+			//sh 'docker run --rm -p 8888:8080 tomcat:9.0-slim'
+			sh 'docker build -t petclinic_img'
 			}	
 		}
-       		stage('install app petclinic sur tomcat'){
-		steps{
-		sh 'COPY target/petclinic.war /usr/local/tomcat/webapps/ROOT.wa'
-		}
-		}	
 
 /*         stage("build and SonarQube analysis") {
             steps {
