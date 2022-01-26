@@ -512,7 +512,7 @@
                 <jpa.database>MYSQL</jpa.database>
                 <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
                 <jdbc.url><![CDATA[jdbc:mysql://localhost:3305/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url>
-                <jdbc.username>petclini</jdbc.username>
+                <jdbc.username>petclinic</jdbc.username>
                 <jdbc.password>petclinic123</jdbc.password>
             </properties>
             <dependencies>
