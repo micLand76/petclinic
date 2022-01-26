@@ -511,7 +511,10 @@
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
                 <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
-    
+                <jdbc.url><![CDATA[jdbc:mysql://lost:36/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url>
+                <jdbc.username>petclinic</jdbc.username>
+                <jdbc.password>petclinic123</jdbc.password>
+            </properties>
             <dependencies>
                 <dependency>
                     <groupId>mysql</groupId>
