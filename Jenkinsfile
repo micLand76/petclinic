@@ -13,23 +13,25 @@ pipeline {
                             } 
                        
               }
-        
-         stage("build and SonarQube analysis") {
-
-            steps {
-              withSonarQubeEnv('sonarqube') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-          }
-          stage("Quality Gate") {
-            steps {
-              timeout(time: 3, unit: 'MINUTES') {
-                waitForQualityGate abortPipeline: true
-              }
-            }
-          }
-        
-        
+	     stage('cmd docker') {
+		 steps{
+			sh 'docker ps'
+			}
+		}
+       
+#         stage("build and SonarQube analysis") {
+#            steps {
+#              withSonarQubeEnv('sonarqube') {
+#                sh 'mvn clean package sonar:sonar'
+#              }
+#            }
+ #         }
+#          stage("Quality Gate") {
+#            steps {
+#              timeout(time: 3, unit: 'MINUTES') {
+#                waitForQualityGate abortPipeline: true
+#              }
+#            }
+#          }       
    }
 }
