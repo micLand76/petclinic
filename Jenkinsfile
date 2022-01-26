@@ -20,7 +20,7 @@ pipeline {
 		}
 		stage('test install tomcat'){
 		steps{
-			sh 'docker run --rm -p 8888:8080 tomcat:9.0'
+			sh 'docker run --rm -p 8888:8080 tomcat:9.0-slim'
 			}	
 		}
        		stage('install app petclinic sur tomcat'){
