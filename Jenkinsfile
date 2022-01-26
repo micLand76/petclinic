@@ -11,12 +11,12 @@ pipeline {
 		dockerImage = ''
 	}	
     stages {       
-        stage('build mvn') {
+        /*stage('build mvn') {
             steps {      
-                sh 'mvn clean package'        
+                sh 'mvn clean '        
             }        
-        }
-/*      
+        }*/
+     
 		stage("build and SonarQube analysis") {
             steps {
 				withSonarQubeEnv('sonarqube') {
@@ -32,7 +32,7 @@ pipeline {
 				}
             }
         }       
-*/
+
 
 	    
        // Stopping Docker containers for cleaner Docker run
