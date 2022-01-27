@@ -511,7 +511,7 @@
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
 		<jdbc>
-        		<url>![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true]]</url>
+        		<url>![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET;useSSL=true]]</url>
         		<driver>com.mysql.cj.jdbc.Driver</driver>
         		<username>myConnection</username>
         		<password>admin_Petclinic</password>
