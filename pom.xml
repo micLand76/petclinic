@@ -464,6 +464,7 @@
     </build>
 
     <profiles>
+	<!-- 
         <profile>
             <id>H2</id>
             <activation>
@@ -505,19 +506,23 @@
                 </dependency>
             </dependencies>
         </profile>
+	-->
+
         <profile>
             <id>MySQL</id>
             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
-		<jdbc>
+		<!-- <jdbc>
         		<url>![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET;useSSL=true]]</url>
         		<driver>com.mysql.cj.jdbc.Driver</driver>
         		<username>myConnection</username>
         		<password>admin_Petclinic</password>
-    		</jdbc>
-                <!-- <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName> -->
-		<!-- <jdbc.url><"jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true";myDbConn=DriverManager.getConnection(url, "myConnection", "admin_Petclinic");></jdbc.url> -->
+    		</jdbc> -->
+                <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
+		<jdbc.url>jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true</jdbc.url>
+		<jdbc.username>myConnection@petclinic</jdbc.username>
+                <jdbc.password>admin_Petclinic</jdbc.password>
                 <!-- <jdbc.url><![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url> -->
             </properties>
             <dependencies>
@@ -529,7 +534,8 @@
                 </dependency>
             </dependencies>
         </profile>
-        <profile>
+
+        <!-- <profile>
             <id>PostgreSQL</id>
             <properties>
                 <db.script>postgresql</db.script>
@@ -547,7 +553,8 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
-        </profile>
+        </profile> -->
+
    </profiles>
 
     <repositories>
