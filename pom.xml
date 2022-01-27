@@ -510,8 +510,14 @@
             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
-                <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
-		<jdbc.url><"jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true";myDbConn=DriverManager.getConnection(url, "myConnection", "admin_Petclinic");></jdbc.url>
+		<jdbc>
+        		<url>jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true</url>
+        		<driver>com.mysql.jdbc.Driver</driver>
+        		<username>myConnection</username>
+        		<password>admin_Petclinic</password>
+    		</jdbc>
+                <!--<jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>-->
+		<!--<jdbc.url><"jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true";myDbConn=DriverManager.getConnection(url, "myConnection", "admin_Petclinic");></jdbc.url>-->
                 <!--<jdbc.url><![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url>-->
             </properties>
             <dependencies>
