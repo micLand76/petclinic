@@ -45,8 +45,8 @@ pipeline {
 
 		stage('install tomcat in a docker'){
 			steps{
-				sh 'docker build -t petclinic_img .'
-				sh 'docker run -d -p 8888:8080 --name petclinic petclinic_img'
+				sh 'docker build -t petclinic_img2 .'
+				sh 'docker run -d -p 8888:8080 --name petclinic petclinic_img2'
 			}	
 		}
 
