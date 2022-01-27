@@ -17,7 +17,7 @@ pipeline {
             }        
         }*/
      
-		stage("build and SonarQube analysis") {
+		/*stage("build and SonarQube analysis") {
             steps {
 				withSonarQubeEnv('sonarqube') {
 					sh 'mvn clean package sonar:sonar'
@@ -31,7 +31,7 @@ pipeline {
 					waitForQualityGate abortPipeline: true
 				}
             }
-        }       
+        }       */
 
 
 	    

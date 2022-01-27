@@ -464,7 +464,7 @@
     </build>
 
     <profiles>
-	
+	<!--
         <profile>
             <id>H2</id>
             <activation>
@@ -506,7 +506,7 @@
                 </dependency>
             </dependencies>
         </profile>
-
+	-->
         <profile>
             <id>MySQL</id>
             <properties>
@@ -533,7 +533,7 @@
                 </dependency>
             </dependencies>
         </profile>
-
+	<!--
         <profile>
             <id>PostgreSQL</id>
             <properties>
@@ -553,7 +553,7 @@
                 </dependency>
             </dependencies>
         </profile>
-
+	-->
    </profiles>
 
     <repositories>
