@@ -464,12 +464,12 @@
     </build>
 
     <profiles>
-	<!--
+	
         <profile>
             <id>H2</id>
-            <activation>
+            <!-- <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation> -->
             <properties>
                 <db.script>h2</db.script>
                 <jpa.database>H2</jpa.database>
@@ -506,9 +506,12 @@
                 </dependency>
             </dependencies>
         </profile>
-	-->
+	
         <profile>
             <id>MySQL</id>
+	    <activation>
+            	<activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
@@ -533,7 +536,7 @@
                 </dependency>
             </dependencies>
         </profile>
-	<!--
+	
         <profile>
             <id>PostgreSQL</id>
             <properties>
@@ -553,7 +556,7 @@
                 </dependency>
             </dependencies>
         </profile>
-	-->
+	
    </profiles>
 
     <repositories>
