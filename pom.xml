@@ -464,7 +464,7 @@
     </build>
 
     <profiles>
-	<!-- 
+	
         <profile>
             <id>H2</id>
             <activation>
@@ -506,7 +506,6 @@
                 </dependency>
             </dependencies>
         </profile>
-	-->
 
         <profile>
             <id>MySQL</id>
@@ -535,7 +534,7 @@
             </dependencies>
         </profile>
 
-        <!-- <profile>
+        <profile>
             <id>PostgreSQL</id>
             <properties>
                 <db.script>postgresql</db.script>
@@ -553,7 +552,7 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
-        </profile> -->
+        </profile>
 
    </profiles>
 
