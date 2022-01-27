@@ -8,6 +8,9 @@ pipeline {
         registryName = "petclinicweb"
         registryCredential = 'petclinic_ACR'
         registryUrl = 'petclinicweb.azurecr.io'
+	MYSQL_PASSWORD = 'admin_Petclinic'
+	MYSQL_USERNAME = 'myConnection'
+	MYSQL_SERVER_IP = 'petclinic.mysql.database.azure.com'
 		dockerImage = ''
 	}	
     stages {       
@@ -21,6 +24,7 @@ pipeline {
             steps {
 				withSonarQubeEnv('sonarqube') {
 					sh 'mvn clean package sonar:sonar'
+					echo 'mvn -Denv.MYSQL_SERVER_IP=${MYSQL_SERVER_IP} -Denv.MYSQL_USERNAME=${MYSQL_USERNAME} -Denv.MYSQL_PASSWORD=${MYSQL_PASSWORD} package -P MySQL '
 				}
             }
          }
