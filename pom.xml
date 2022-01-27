@@ -464,11 +464,12 @@
     </build>
 
     <profiles>
+	
         <profile>
             <id>H2</id>
-            <activation>
+            <!-- <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation> -->
             <properties>
                 <db.script>h2</db.script>
                 <jpa.database>H2</jpa.database>
@@ -505,15 +506,29 @@
                 </dependency>
             </dependencies>
         </profile>
+	
         <profile>
             <id>MySQL</id>
+	    <activation>
+            	<activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
+		<!-- <jdbc>
+        		<url>![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET;useSSL=true]]</url>
+        		<driver>com.mysql.cj.jdbc.Driver</driver>
+        		<username>myConnection</username>
+        		<password>admin_Petclinic</password>
+    		</jdbc>
                 <jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
-                <jdbc.url><![CDATA[jdbc:mysql://localhost:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url>
-                <jdbc.username>petclinic</jdbc.username>
-                <jdbc.password>petclinic123</jdbc.password>
+		<jdbc.url>jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useSSL=true</jdbc.url>
+		<jdbc.username>myConnection@petclinic</jdbc.username>
+                <jdbc.password>admin_Petclinic</jdbc.password> -->
+		<jdbc.driverClassName>com.mysql.cj.jdbc.Driver</jdbc.driverClassName>
+                <jdbc.url><![CDATA[jdbc:mysql://petclinic.mysql.database.azure.com:3306/petclinic?useUnicode=true&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=CET]]></jdbc.url>
+                <jdbc.username>myConnection</jdbc.username>
+                <jdbc.password>admin_Petclinic</jdbc.password>
             </properties>
             <dependencies>
                 <dependency>
@@ -524,6 +539,7 @@
                 </dependency>
             </dependencies>
         </profile>
+	
         <profile>
             <id>PostgreSQL</id>
             <properties>
@@ -543,6 +559,7 @@
                 </dependency>
             </dependencies>
         </profile>
+	
    </profiles>
 
     <repositories>
