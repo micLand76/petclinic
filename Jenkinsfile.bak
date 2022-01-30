@@ -39,7 +39,8 @@ pipeline {
 				sh 'docker container ls -a -fname=petclinic -q | xargs -r docker container rm'
 			}
        }
-
+		
+		//installing the server web Tomcat in a container
 		stage('install tomcat in a docker'){
 			steps{
 				sh 'docker build -t petclinic_img .'
