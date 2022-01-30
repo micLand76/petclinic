@@ -15,7 +15,7 @@ pipeline {
 	}	
     stages {       
 		
-		//first stage: execute maven to test and build the app
+		//first stage: execute maven to test and build the application
 		stage("Maven build") {
             steps {
 				withSonarQubeEnv('sonarqube') {

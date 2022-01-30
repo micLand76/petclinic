@@ -14,7 +14,8 @@ pipeline {
 		dockerImage = ''
 	}	
     stages {       
-     
+		
+		//first stage: execute maven to test and build the app
 		stage("Maven build") {
             steps {
 				withSonarQubeEnv('sonarqube') {
@@ -23,7 +24,7 @@ pipeline {
 				}
             }
          }
-         
+		  
 		stage("SonarQube Quality Gate") {
             steps {
 				timeout(time: 10, unit: 'MINUTES') {
