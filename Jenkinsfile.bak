@@ -20,6 +20,7 @@ pipeline {
             steps {
 				withSonarQubeEnv('sonarqube') {
 					sh 'mvn clean install package'
+					sh 'sonar.sources=/var/lib/jenkins/workspace/$JOB_NAME'
 					//echo 'mvn -Denv.MYSQL_SERVER_IP=${MYSQL_SERVER_IP} -Denv.MYSQL_USERNAME=${MYSQL_USERNAME} -Denv.MYSQL_PASSWORD=${MYSQL_PASSWORD} package -P MySQL '
 				}
             }
