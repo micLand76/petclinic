@@ -20,7 +20,6 @@ pipeline {
             steps {
 				withSonarQubeEnv('sonarqube') {
 					sh 'mvn clean instal'
-					sh 'mvn sonar:sonar'
 					echo 'mvn -Denv.MYSQL_SERVER_IP=${MYSQL_SERVER_IP} -Denv.MYSQL_USERNAME=${MYSQL_USERNAME} -Denv.MYSQL_PASSWORD=${MYSQL_PASSWORD} package -P MySQL '
 				}
             }
