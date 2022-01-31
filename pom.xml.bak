@@ -291,8 +291,8 @@
 	<!-- <dependency>
     		<groupId>org.sonarsource.scanner.maven</groupId>
     		<artifactId>sonar-maven-plugin</artifactId>
-    		<version>3.9.1.2184</version> 
-	</dependency> -->
+    		<version>3.9.1.2184</version> -->
+	</dependency>
     </dependencies>
 
     <!-- Maven plugin versions are mentioned in order to guarantee the build reproducibility in the long term -->
