@@ -18,20 +18,20 @@ pipeline {
 		//first stage: execute maven to test and build the application
 		stage("Maven build") {
             steps {
-				withSonarQubeEnv('sonarqube') {
-					sh 'mvn clean install package'
-					//echo 'mvn -Denv.MYSQL_SERVER_IP=${MYSQL_SERVER_IP} -Denv.MYSQL_USERNAME=${MYSQL_USERNAME} -Denv.MYSQL_PASSWORD=${MYSQL_PASSWORD} package -P MySQL '
+				withSonarQubeEnv(installationName: 'sonarqube') {
+					sh 'mvn clean install package org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+					echo 'mvn -Denv.MYSQL_SERVER_IP=${MYSQL_SERVER_IP} -Denv.MYSQL_USERNAME=${MYSQL_USERNAME} -Denv.MYSQL_PASSWORD=${MYSQL_PASSWORD} package -P MySQL '
 				}
             }
          }
 		  
-		stage("SonarQube Quality Gate") {
-            steps {
-				timeout(time: 10, unit: 'MINUTES') {
-					waitForQualityGate abortPipeline: true
-				}
-            }
-        }       
+		//stage("SonarQube Quality Gate") {
+        //    steps {
+		//		timeout(time: 10, unit: 'MINUTES') {
+		//			waitForQualityGate abortPipeline: true
+		//		}
+        //    }
+        //}       
 
        // Stopping Docker containers for cleaner Docker run
         stage('stop previous containers') {
