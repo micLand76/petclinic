@@ -24,7 +24,7 @@ pipeline {
 				}
             }
          }
-		  
+		//SonarQube analyse  
 		stage("SonarQube Quality Gate") {
             steps {
 				timeout(time: 10, unit: 'MINUTES') {
