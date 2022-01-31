@@ -26,12 +26,12 @@ pipeline {
          }
 		  
 		//stage("SonarQube Quality Gate") {
-        //    steps {
-		//		timeout(time: 10, unit: 'MINUTES') {
-		//			waitForQualityGate abortPipeline: true
-		//		}
-        //    }
-        //}       
+            steps {
+				timeout(time: 10, unit: 'MINUTES') {
+					waitForQualityGate abortPipeline: true
+				}
+            }
+        }       
 
        // Stopping Docker containers for cleaner Docker run
         stage('stop previous containers') {
